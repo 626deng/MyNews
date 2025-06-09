@@ -11,14 +11,12 @@ import com.ixuea.courses.mymusic.R
 class GuideActivity: AppCompatActivity() {
 
     lateinit var viewPager: ViewPager
-    lateinit var guideAdapter: GuideAdapter
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_guide)
         viewPager=findViewById(R.id.viewPager)
-        viewPager.adapter=guideAdapter
         Log.d(TAG, "onCreate: 1")
     }
 

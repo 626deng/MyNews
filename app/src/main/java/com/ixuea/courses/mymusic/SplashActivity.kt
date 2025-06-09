@@ -8,28 +8,27 @@ import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
+import androidx.viewbinding.ViewBinding
 import com.ixuea.courses.mymusic.activity.BaseLoginActivity
+import com.ixuea.courses.mymusic.activity.BaseViewModelActivity
 import com.ixuea.courses.mymusic.component.guide.GuideActivity
+import com.ixuea.courses.mymusic.databinding.ActivitySplashBinding
 import com.ixuea.courses.mymusic.fragment.MyDialogFragment
 import com.ixuea.superui.date.DateUtil
 import com.permissionx.guolindev.PermissionX
 import com.qmuiteam.qmui.util.QMUIStatusBarHelper
 
-class SplashActivity : BaseLoginActivity(){
-
-    lateinit var textView: TextView
+class SplashActivity : BaseViewModelActivity<ActivitySplashBinding>() {
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_splash)
         initDatum()
         initViews()
     }
 
     override fun initDatum() {
         super.initDatum()
-        textView=findViewById(R.id.textView)
         requestPermission()
     }
 
@@ -73,7 +72,7 @@ class SplashActivity : BaseLoginActivity(){
         //设置状态栏文本为黑色
         QMUIStatusBarHelper.setStatusBarLightMode(this)
 
-        textView.text= "时间：${DateUtil.getDate()}"
+        binding.textView.text= "时间：${DateUtil.getDate()}"
 
         showDialogFragment()
     }
