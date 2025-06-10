@@ -2,19 +2,15 @@ package com.ixuea.courses.mymusic.fragment
 
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
-import android.widget.Button
 import androidx.fragment.app.FragmentManager
-import com.google.android.material.button.MaterialButton
-import com.ixuea.courses.mymusic.R
+import com.ixuea.courses.mymusic.databinding.FragmentMyDialogBinding
 import com.ixuea.superui.date.ScreenUtil
 
-class MyDialogFragment: BaseDialogFragment() {
+class MyDialogDialogFragment: BaseViewModelDialogFragment<FragmentMyDialogBinding>() {
 
-    lateinit var materialButton: Button
     lateinit var onClickListener: View.OnClickListener
 
     override fun initViews() {
@@ -24,22 +20,13 @@ class MyDialogFragment: BaseDialogFragment() {
 
     override fun initListeners() {
         super.initListeners()
-        materialButton.setOnClickListener {
+        binding.materialButton.setOnClickListener {
             dismiss()
             onClickListener.onClick(it)
             Log.d("MyDialogFragment",it.toString())
         }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        val view=inflater.inflate(R.layout.fragment_my_dialog,container,false)
-        materialButton=view.findViewById(R.id.materialButton)
-        return view
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -60,7 +47,7 @@ class MyDialogFragment: BaseDialogFragment() {
          * 显示对话框
          */
         fun show(manager: FragmentManager, myOnClickListener: View.OnClickListener) {
-            val myDialogFragment= MyDialogFragment()
+            val myDialogFragment= MyDialogDialogFragment()
             myDialogFragment.onClickListener=myOnClickListener
             myDialogFragment.show(manager,"MyDialogFragment")
         }

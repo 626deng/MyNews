@@ -3,17 +3,12 @@ package com.ixuea.courses.mymusic
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.nfc.Tag
-import android.os.Build
 import android.os.Bundle
 import android.util.Log
-import android.widget.TextView
-import androidx.viewbinding.ViewBinding
-import com.ixuea.courses.mymusic.activity.BaseLoginActivity
 import com.ixuea.courses.mymusic.activity.BaseViewModelActivity
 import com.ixuea.courses.mymusic.component.guide.GuideActivity
 import com.ixuea.courses.mymusic.databinding.ActivitySplashBinding
-import com.ixuea.courses.mymusic.fragment.MyDialogFragment
+import com.ixuea.courses.mymusic.fragment.MyDialogDialogFragment
 import com.ixuea.superui.date.DateUtil
 import com.permissionx.guolindev.PermissionX
 import com.qmuiteam.qmui.util.QMUIStatusBarHelper
@@ -29,6 +24,7 @@ class SplashActivity : BaseViewModelActivity<ActivitySplashBinding>() {
 
     override fun initDatum() {
         super.initDatum()
+
         requestPermission()
     }
 
@@ -55,7 +51,7 @@ class SplashActivity : BaseViewModelActivity<ActivitySplashBinding>() {
     }
 
     private fun showDialogFragment() {
-        MyDialogFragment.show(supportFragmentManager)
+        MyDialogDialogFragment.show(supportFragmentManager)
         {
             Log.d("SplashActivity","assdadasd")
             val intent= Intent(this, GuideActivity::class.java)

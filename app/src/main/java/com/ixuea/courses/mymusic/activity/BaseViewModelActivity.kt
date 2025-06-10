@@ -19,6 +19,6 @@ open class BaseViewModelActivity<VB: ViewBinding>: BaseActivity() {
             binding = method.invoke(null, layoutInflater) as VB
             setContentView(binding.root)
         }
-
     }
+
 }
