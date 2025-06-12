@@ -24,7 +24,6 @@ class SplashActivity : BaseViewModelActivity<ActivitySplashBinding>() {
 
     override fun initDatum() {
         super.initDatum()
-
         requestPermission()
     }
 

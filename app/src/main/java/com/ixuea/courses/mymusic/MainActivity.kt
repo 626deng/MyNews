@@ -1,20 +1,47 @@
 package com.ixuea.courses.mymusic
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.angcyo.tablayout.delegate2.ViewPager2Delegate
+import com.ixuea.courses.mymusic.activity.BaseViewModelActivity
+import com.ixuea.courses.mymusic.component.adapter.BottomAdapter
+import com.ixuea.courses.mymusic.component.login.LoginHomeActivity
+import com.ixuea.courses.mymusic.databinding.ActivityMainBinding
+import com.ixuea.courses.mymusic.databinding.TabItemBinding
+import com.ixuea.courses.mymusic.util.Constant
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseViewModelActivity<ActivityMainBinding>(){
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+        val action=intent.action
+        if(action== Constant.ACTION_LOGIN)
+        {
+            val intent= Intent(this, LoginHomeActivity::class.java)
+            startActivity(intent)
         }
+
+        for(i in indicatorList.indices)
+        {
+            TabItemBinding.inflate(layoutInflater).apply {
+                content.text=indicatorList[i]
+                icon.setImageResource(iconList[i])
+                binding.dslTabLayout.addView(root)
+            }
+        }
+
+        binding.viewPager2.adapter= BottomAdapter(4,this)
+        binding.viewPager2.offscreenPageLimit=4
+
+        ViewPager2Delegate.install(binding.viewPager2,binding.dslTabLayout,true)
     }
+
+    companion object{
+        val indicatorList = listOf("发现", "视频", "分类", "我的")
+        val iconList=listOf(R.drawable.selector_tab_discovery,
+            R.drawable.selector_tab_video,
+            R.drawable.selector_tab_sort,
+            R.drawable.selector_tab_me)
+    }
+
 }

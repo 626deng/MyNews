@@ -37,9 +37,15 @@ android {
     viewBinding{
         enable=true
     }
+
+
 }
 
 dependencies {
+    implementation(libs.dslTablayout.viewPager2Delegate)
+    implementation(libs.dslTablayout.tabLayout)
+    implementation(libs.okhttp3.okhttp)
+    implementation(libs.relex.circleindicator)
     implementation(libs.permissionx.permission)
     implementation(libs.qmuiteam.qmui)
     implementation(libs.androidx.core.ktx)

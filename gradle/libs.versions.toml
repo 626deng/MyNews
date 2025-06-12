@@ -11,9 +11,16 @@ activity = "1.8.0"
 constraintlayout = "2.1.4"
 qmui="2.0.1"
 permission="1.8.1"
-
+circleindicator="2.1.6"
+okhttp="4.9.3"
+tablayout="3.5.3"
+viewPager2Delegate="3.5.3"
 
 [libraries]
+dslTablayout-tabLayout={group = "com.github.angcyo.DslTablayout",name = "TabLayout",version.ref = "tablayout"}
+dslTablayout-viewPager2Delegate={group = "com.github.angcyo.DslTablayout",name = "ViewPager2Delegate",version.ref = "viewPager2Delegate"}
+okhttp3-okhttp={group = "com.squareup.okhttp3",name = "okhttp",version.ref = "okhttp"}
+relex-circleindicator={group = "me.relex",name = "circleindicator",version.ref = "circleindicator"}
 permissionx-permission={group = "com.guolindev.permissionx",name = "permissionx",version.ref = "permission"}
 qmuiteam-qmui = { group = "com.qmuiteam",name = "qmui",version.ref = "qmui" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
