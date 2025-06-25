@@ -4,7 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import com.ixuea.courses.mymusic.MainActivity
+import com.ixuea.courses.mymusic.component.main.MainActivity
 import com.ixuea.courses.mymusic.activity.BaseViewModelActivity
 import com.ixuea.courses.mymusic.databinding.ActivityGuideBinding
 import com.ixuea.courses.mymusic.util.Constant
@@ -31,7 +31,9 @@ class GuideActivity: BaseViewModelActivity<ActivityGuideBinding>() {
         super.initDatum()
         guideAdapter= GuideAdapter(this,supportFragmentManager)
         binding.viewPager.adapter=guideAdapter
+        //绑定circleIndicator与viewPager
         binding.circleIndicator.setViewPager(binding.viewPager)
+        //实现ViewPager页面变化时指示器的同步更新
         guideAdapter.registerDataSetObserver(binding.circleIndicator.dataSetObserver)
         guideAdapter.setDatum1(list)
         Log.d(TAG, "onCreate: 1")
@@ -58,12 +60,10 @@ class GuideActivity: BaseViewModelActivity<ActivityGuideBinding>() {
             override fun onFailure(call: Call, e: IOException) {
                 Log.d("GuideActivity","onFailure")
             }
-
             override fun onResponse(call: Call, response: Response) {
                 val datum= response.body?.string()
                 Log.d(TAG, "onResponse: ${datum.toString()}")
             }
-
         })
     }
 
@@ -71,5 +71,4 @@ class GuideActivity: BaseViewModelActivity<ActivityGuideBinding>() {
     {
         const val TAG="GuideActivity"
     }
-
 }

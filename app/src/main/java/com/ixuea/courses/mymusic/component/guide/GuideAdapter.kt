@@ -16,7 +16,7 @@ class GuideAdapter(val context: Context,fragmentManager: FragmentManager): Fragm
     }
 
     override fun getCount(): Int {
-        return datum.size
+        return datum.size 
     }
 
     fun setDatum1(datum: List<String>)

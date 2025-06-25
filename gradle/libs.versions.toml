@@ -15,11 +15,27 @@ circleindicator="2.1.6"
 okhttp="4.9.3"
 tablayout="3.5.3"
 viewPager2Delegate="3.5.3"
+logging-interceptor="4.9.3"
+retrofit="2.9.0"
+converter-gson="2.9.0"
+gson="2.9.0"
+baseRecyclerViewAdapter="4.0.0-beta04"
+lifecycle-livedata-ktx="2.6.1"
+lifecycle-viewmodel-ktx="2.6.1"
+glide="4.15.1"
 
 [libraries]
+glide-glide={group="com.github.bumptech.glide",name="glide",version.ref = "glide"}
+lifecycle-livedata-ktx={group = "androidx.lifecycle",name = "lifecycle-livedata-ktx",version.ref = "lifecycle-livedata-ktx"}
+lifecycle-viewmodel-ktx={group = "androidx.lifecycle",name = "lifecycle-viewmodel-ktx",version.ref = "lifecycle-viewmodel-ktx"}
+cymchad-baseRecyclerViewAdapter={group = "io.github.cymchad",name = "BaseRecyclerViewAdapterHelper",version.ref = "baseRecyclerViewAdapter"}
 dslTablayout-tabLayout={group = "com.github.angcyo.DslTablayout",name = "TabLayout",version.ref = "tablayout"}
 dslTablayout-viewPager2Delegate={group = "com.github.angcyo.DslTablayout",name = "ViewPager2Delegate",version.ref = "viewPager2Delegate"}
 okhttp3-okhttp={group = "com.squareup.okhttp3",name = "okhttp",version.ref = "okhttp"}
+logging-interceptor={group = "com.squareup.okhttp3",name = "logging-interceptor",version.ref = "logging-interceptor"}
+retrofit={group = "com.squareup.retrofit2",name = "retrofit",version.ref = "retrofit"}
+gson={group="com.google.code.gson",name="gson",version.ref = "gson"}
+converter-gson={group="com.squareup.retrofit2",name="converter-gson",version.ref = "converter-gson"}
 relex-circleindicator={group = "me.relex",name = "circleindicator",version.ref = "circleindicator"}
 permissionx-permission={group = "com.guolindev.permissionx",name = "permissionx",version.ref = "permission"}
 qmuiteam-qmui = { group = "com.qmuiteam",name = "qmui",version.ref = "qmui" }

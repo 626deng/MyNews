@@ -1,14 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".component.discovery.DiscoveryFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="DiscoveryFragment" />
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:background="@color/primary"
+        >
+        <ImageView
+            android:id="@+id/imageView"
+            android:src="@mipmap/ic_launcher"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:scaleType="fitXY" />
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:id="@+id/textView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/shape_edit_text_surface"
+            android:text="搜索输入网址"
+            android:gravity="center"
+            android:textSize="20sp"
+            />
+        <ImageView
+            android:id="@+id/imageView2"
+            android:src="@mipmap/ic_launcher"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:scaleType="fitXY" />
+    </LinearLayout>
 
-</FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        >
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            />
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@mipmap/ic_launcher"
+            android:scaleType="centerCrop"
+            />
+    </LinearLayout>
+
+    <com.ixuea.courses.mymusic.view.NestedScrollableHost
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+    </com.ixuea.courses.mymusic.view.NestedScrollableHost>
+
+
+</LinearLayout>

@@ -34,17 +34,25 @@ android {
         jvmTarget = "11"
     }
 
+
     viewBinding{
         enable=true
     }
 
-
 }
 
 dependencies {
+    implementation(libs.glide.glide)
+    implementation(libs.lifecycle.livedata.ktx)
+    implementation(libs.lifecycle.viewmodel.ktx)
+    implementation(libs.cymchad.baseRecyclerViewAdapter)
     implementation(libs.dslTablayout.viewPager2Delegate)
     implementation(libs.dslTablayout.tabLayout)
     implementation(libs.okhttp3.okhttp)
+    implementation(libs.converter.gson)
+    implementation(libs.gson)
+    implementation(libs.logging.interceptor)
+    implementation(libs.retrofit)
     implementation(libs.relex.circleindicator)
     implementation(libs.permissionx.permission)
     implementation(libs.qmuiteam.qmui)
